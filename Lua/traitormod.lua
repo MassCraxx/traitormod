@@ -1,4 +1,4 @@
-Traitormod.VERSION = "2.1-RC6"
+Traitormod.VERSION = "2.1-RC7"
 
 print("Traitor Mod v" .. Traitormod.VERSION .. " by Evil Factory")
 print("Special thanks to Qunk, Femboy69 and JoneK for helping in the development of this mod.")
