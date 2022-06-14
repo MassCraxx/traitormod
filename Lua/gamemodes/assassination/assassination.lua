@@ -243,7 +243,6 @@ assassination.AssignInitialMissions = function (targetsAvailable)
             Traitormod.Log("Chose assassination target " .. target.Name)
             traitor.MainObjectives[1] = Traitormod.GetObjective("Assassinate")
             traitor.MainObjectives[1].Start(character, target)
-            Traitormod.Error("No initial assassination target has been found!")
     
             local objectivesAvaiable = {}
             for key, value in pairs(assassination.Config.SubObjectives) do
@@ -316,7 +315,7 @@ assassination.CheckObjectives = function (character, traitor)
 
             local client = Traitormod.FindClientCharacter(character)
             if client == nil then 
-                Traitormod.Error("Couldn't award assassination points for " + character.Name)
+                Traitormod.Error("Couldn't award assassination points for " .. character.Name)
             else
                 -- flag character as killed, so it wont be targeted again
                 assassination.KilledTargets[client.Character] = true
@@ -357,7 +356,7 @@ assassination.CheckObjectives = function (character, traitor)
             -- award points for sub objection completion
             local client = Traitormod.FindClientCharacter(character)
             if client == nil then 
-                Traitormod.Error("Couldn't award sub objective points for " + character.Name)
+                Traitormod.Error("Couldn't award sub objective points for " .. character.Name)
             else
                 local xp = Traitormod.AwardPoints(client, objective.Config.AmountPoints)
                 Traitormod.SendObjectiveCompleted(client, objective.ObjectiveText, xp)
